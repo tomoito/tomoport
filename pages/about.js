@@ -35,20 +35,11 @@ export default function About() {
           </div>
           <div className="pt-8 pb-8 prose dark:prose-dark max-w-none xl:col-span-2">
             <p>
-              Tails Azimuth is a professor of atmospheric sciences at the Stanford AI Lab. His
-              research interests includes complexity modelling of tailwinds, headwinds and
-              crosswinds.
+              こんにちは、tomoと申します。Webエンジニアをしております。皆様のお力になれたら幸いです。何かお困りのことがありましたらお気軽に相談して下さい。
             </p>
-            <p>
-              He leads the clean energy group which develops 3D air pollution-climate models, writes
-              differential equation solvers, and manufactures titanium plated air ballons. In his
-              free time he bakes raspberry pi.
+            <p>またブログも書いてます。基本的にはReact,TypeScript,python関連の記事を書来ます。
             </p>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique
-              placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem
-              nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
-            </p>
+            <p>お仕事関係はお待ちしております。</p>
           </div>
         </div>
       </div>
