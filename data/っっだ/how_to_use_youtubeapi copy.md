@@ -1,11 +1,9 @@
 ---
-title: 'Yes,江頭'
-date: '2021-02-15'
-tags: ['writings', 'book', 'reflection','react']
+title: 'エガちゃんねるの再生回数の動向を知りたい！（Python × Youtube Data API を学ぶ)
+date: '2021-02-28'
+tags: ['markdown', 'code', 'features']
 draft: false
-summary: 'The Time Traveller (for so it will be convenient to speak of him) was
-expounding a recondite matter to us. His pale grey eyes shone and
-twinkled, and his usually pale face was flushed and animated...'
+summary: 'Python から Youtube Data API の使い方を説明します。また、特定のチャンネルの再生数を動向を確認します。'
 ---
 
 # エガちゃんねるの再生回数の動向を知りたい！（Python × Youtube Data API を学ぶ)
