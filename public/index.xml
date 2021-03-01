@@ -7,9 +7,19 @@
       <language>en-us</language>
       <managingEditor>address@yoursite.com (Tails Azimuth)</managingEditor>
       <webMaster>address@yoursite.com (Tails Azimuth)</webMaster>
-      <lastBuildDate>Tue, 12 Jan 2021 00:00:00 GMT</lastBuildDate>
+      <lastBuildDate>Mon, 15 Feb 2021 00:00:00 GMT</lastBuildDate>
       <atom:link href="https://tailwind-nextjs-starter-blog.vercel.app/index.xml" rel="self" type="application/rss+xml"/>
       
+  <item>
+    <guid>https://tailwind-nextjs-starter-blog.vercel.app/blog/YoutubeAPIを使ってチャンネルの分析する方法</guid>
+    <title>Yes,江頭</title>
+    <link>https://tailwind-nextjs-starter-blog.vercel.app/blog/YoutubeAPIを使ってチャンネルの分析する方法</link>
+    <description>The Time Traveller (for so it will be convenient to speak of him) was expounding a recondite matter to us. His pale grey eyes shone and twinkled, and his usually pale face was flushed and animated...</description>
+    <pubDate>Mon, 15 Feb 2021 00:00:00 GMT</pubDate>
+    <author>address@yoursite.com (Tails Azimuth)</author>
+    <category>writings</category><category>book</category><category>reflection</category>
+  </item>
+
   <item>
     <guid>https://tailwind-nextjs-starter-blog.vercel.app/blog/introducing-tailwind-nextjs-starter-blog</guid>
     <title>Introducing Tailwind Nexjs Starter Blog</title>
