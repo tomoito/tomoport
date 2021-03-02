@@ -11,6 +11,16 @@
       <atom:link href="https://tailwind-nextjs-starter-blog.vercel.app/index.xml" rel="self" type="application/rss+xml"/>
       
   <item>
+    <guid>https://tailwind-nextjs-starter-blog.vercel.app/blog/how_to_accses_googlespreadsheet_python</guid>
+    <title>YPython から Google Spread Sheets へのアクセス方法</title>
+    <link>https://tailwind-nextjs-starter-blog.vercel.app/blog/how_to_accses_googlespreadsheet_python</link>
+    <description>Python から Google Spread Sheets へのアクセス方法</description>
+    <pubDate>Mon, 01 Mar 2021 00:00:00 GMT</pubDate>
+    <author>tomotun1210@gmail.com (tomo)</author>
+    <category>python</category><category>youtube</category>
+  </item>
+
+  <item>
     <guid>https://tailwind-nextjs-starter-blog.vercel.app/blog/how_to_get_youtube_trend</guid>
     <title>Youtube の急上昇ランキングを取得する方法（Python × Youtube Data API を学ぶ)</title>
     <link>https://tailwind-nextjs-starter-blog.vercel.app/blog/how_to_get_youtube_trend</link>
