@@ -1,5 +1,5 @@
 ---
-title: 'YPython から Google Spread Sheets へのアクセス方法'
+title: 'Python から Google Spread Sheets へのアクセス方法'
 date: '2021-03-01'
 tags: ['python', 'youtube']
 draft: false
