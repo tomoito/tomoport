@@ -7,9 +7,19 @@
       <language>ja-jp</language>
       <managingEditor>tomotun1210@gmail.com (tomo)</managingEditor>
       <webMaster>tomotun1210@gmail.com (tomo)</webMaster>
-      <lastBuildDate>Wed, 03 Mar 2021 00:00:00 GMT</lastBuildDate>
+      <lastBuildDate>Thu, 04 Mar 2021 00:00:00 GMT</lastBuildDate>
       <atom:link href="https://tailwind-nextjs-starter-blog.vercel.app/index.xml" rel="self" type="application/rss+xml"/>
       
+  <item>
+    <guid>https://tailwind-nextjs-starter-blog.vercel.app/blog/how_to_use_react_trello</guid>
+    <title>Reactで Trello のような Drag&Drop (DnD)を最速で作成する方法</title>
+    <link>https://tailwind-nextjs-starter-blog.vercel.app/blog/how_to_use_react_trello</link>
+    <description>reactからreact-google-mapsを使って、地図のレンダリングとマーカーの配置の作り方を説明します。</description>
+    <pubDate>Thu, 04 Mar 2021 00:00:00 GMT</pubDate>
+    <author>tomotun1210@gmail.com (tomo)</author>
+    <category>react</category><category>react-dnd</category><category>react-trello</category>
+  </item>
+
   <item>
     <guid>https://tailwind-nextjs-starter-blog.vercel.app/blog/how_to_use_google_map_api</guid>
     <title>react-google-mapsを使った地図アプリでマーカーを表示する</title>
@@ -22,7 +32,7 @@
 
   <item>
     <guid>https://tailwind-nextjs-starter-blog.vercel.app/blog/how_to_accses_googlespreadsheet_python</guid>
-    <title>YPython から Google Spread Sheets へのアクセス方法</title>
+    <title>Python から Google Spread Sheets へのアクセス方法</title>
     <link>https://tailwind-nextjs-starter-blog.vercel.app/blog/how_to_accses_googlespreadsheet_python</link>
     <description>Python から Google Spread Sheets へのアクセス方法</description>
     <pubDate>Mon, 01 Mar 2021 00:00:00 GMT</pubDate>
