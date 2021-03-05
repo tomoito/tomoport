@@ -7,9 +7,19 @@
       <language>ja-jp</language>
       <managingEditor>tomotun1210@gmail.com (tomo)</managingEditor>
       <webMaster>tomotun1210@gmail.com (tomo)</webMaster>
-      <lastBuildDate>Thu, 04 Mar 2021 00:00:00 GMT</lastBuildDate>
+      <lastBuildDate>Fri, 05 Mar 2021 00:00:00 GMT</lastBuildDate>
       <atom:link href="https://tailwind-nextjs-starter-blog.vercel.app/index.xml" rel="self" type="application/rss+xml"/>
       
+  <item>
+    <guid>https://tailwind-nextjs-starter-blog.vercel.app/blog/learn_typescript_dqwalk</guid>
+    <title>ドラクエウォークで学ぶ、TypeScript入門</title>
+    <link>https://tailwind-nextjs-starter-blog.vercel.app/blog/learn_typescript_dqwalk</link>
+    <description>TypeScriptの型の作り方を楽しく学んできます。</description>
+    <pubDate>Fri, 05 Mar 2021 00:00:00 GMT</pubDate>
+    <author>tomotun1210@gmail.com (tomo)</author>
+    <category>TypeScript</category>
+  </item>
+
   <item>
     <guid>https://tailwind-nextjs-starter-blog.vercel.app/blog/how_to_use_react_trello</guid>
     <title>Reactで Trello のような Drag&Drop (DnD)を最速で作成する方法</title>
