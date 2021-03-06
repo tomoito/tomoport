@@ -49,7 +49,7 @@ import requests
 
 API_SERVICE_NAME = "youtube"
 API_VERSION = "v3"
-API_KEY = "AIzaSyArPgqw1ivEjMrGj6vXCadIT1vVz7PeUZQ"
+API_KEY = "xxxxxxxxxxx"
 
 parms = {
             'part': 'id,snippet',
