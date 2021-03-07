@@ -32,8 +32,6 @@ let flg = false;
 
 typeScript⇨javascript とは、単純にコンパイルされると型情報が消去されるだけです。
 
-しかし、開発中に型があることによって、プロパティが存在しているかのチェックができます。コードがサジェストされることはとても爽快です。。
-
 # TypeScript じゃないのだめなの？
 
 キーがサジェストされることによって、開発中のミスが減りバグが減ることが期待されます。
@@ -42,7 +40,7 @@ typeScript⇨javascript とは、単純にコンパイルされると型情報�
 
 # ドラクエウォークのこころを TypeScript で表現してみる。
 
-## こころの情報は下記の json ファイルから取得することを想定します。
+こころの情報は下記の json ファイルから取得することを想定します。
 
 ```javascript
 {
@@ -69,10 +67,30 @@ typeScript⇨javascript とは、単純にコンパイルされると型情報�
 ## ベースとなるココロの型を作っておきます。（json から型を取る）
 
 TypeScript で深い Json 構造を１から作るのは面倒です。
-そこで Json 構造から要素を取り出すときに型をとります。
+以下のコードによって、Json 構造から要素を取り出すときに型をとることができます
 
 ```javascript
-type TypeKokoro = typeof Data
+type Kokoro = typeof Data
+```
+
+```javascript
+type Kokoro = {
+  id: number,
+  name: string,
+  cost: number,
+  color: string,
+  status: {
+    HP: number,
+    MP: number,
+    攻撃力: number,
+    守備力: number,
+    攻撃魔法: number,
+    回復魔力: number,
+    すばやさ: number,
+    きようさ: number,
+  },
+  option: { ... },
+}
 ```
 
 こうすることで、どれだけ深くネストされたデータでも型を取得することができます。
@@ -82,7 +100,7 @@ type TypeKokoro = typeof Data
 color を見ると、string となっていますが、color は指定の５種類から選びたいです。
 また、option に関しては、存在するプロパティとしないプロパティがありますので、
 オプショナルにしたいです。
-課題は以下の二点に鳴ります。
+まとめると、課題は以下の二点になります。
 
 1.  color は'赤'、'青'、'紫'、'黄'、'緑'から選ぶ。
 2.  option はプロパティが存在するものだけ記載されている。
@@ -115,7 +133,7 @@ const Nobita: Partial<Person> = {
 };
 ```
 
-option プロパティをオプショナルにして、新しい型を作りたいと思います。
+ベースの型を使って、新しい型を作りたいと思います。
 
 まず、Mapped Types によって、既存 Type の Key 情報を再利用して、あたらしい Type を定義しています。
 さらに、Conditional Type を使って、与えられた型によって分岐した結果の型を返すことができます。
@@ -123,8 +141,8 @@ option プロパティをオプショナルにして、新しい型を作りた�
 
 コードは以下のようになります。
 
-```
-type typeKokoroBefore<T, type1, type2, type3> = {
+```javascript
+type typeKokoro<T, type1, type2, type3> = {
   [K in keyof T]:(K extends type1 ?
     Partial<{
     [X in keyof T[K]]?:number
@@ -139,5 +157,5 @@ type typeKokoroBefore<T, type1, type2, type3> = {
 これで、ドラクエウォークのこころを表現できました。
 
 ```javascript
-type kokoro = typeKokoroBefore<TypeDoraSolo, 'option', 'color', colorKind>
+type kokoro = typeKokoroBefore<Kokoro, 'option', 'color', colorKind>
 ```

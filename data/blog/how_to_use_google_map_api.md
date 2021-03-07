@@ -19,22 +19,16 @@ Google Maps API の React ライブラリはいくつか種類がありますが
 2. マーカーを配置する方法
 3. マーカーをクリックすると、メッセージボックス（infoWindows）表示させる方法
 
-Google maps との連携は、、地図アプリにとっては欠かせない機能です。
-
-（私が愛するみんドラさんも活用しており）
-
 最終的なイメージは以下の感じです。
 
 ![hoge](../static/images/googlemap/1_f7e5b0ad44a53610e3d5cc23b08d30ec.gif)
 
-# まずはじめに・・・
+# Google Map API を使用するための準備
 
 Google Map API を使用する前に、Google Map アカウントを作成し、API キーを生成する必要があります。Google マップをコンポーネントでレンダリングするには、このキーが必要になります。ただ、API キーを設定をしなくても(一応)使えます。
 まだの場合は下記を参考に作成してください。
 
 https://www.zenrin-datacom.net/business/gmapsapi/api_key/
-
-次に、コマンドラインに次のように入力して React アプリを作成します。
 
 # Step 1 — React プロジェクトファイルを作成する
 
@@ -55,12 +49,9 @@ react-google-maps パッケージをインストールします。
 
 src フォルダーに MyComponent.jsx というコンポーネントを作成し、このコンポーネントを App.jsx に挿入して、マップを表示できるようにします。
 
+MyComponent を編集していきます。
 react-google-maps から GoogleMap および Loadscript コンポーネントをインポートします。
-次に、、コードを MapContainer コンポーネントに挿入します。
-
-1. react-google-maps から GoogleMap および Loadscript コンポーネントをインポートします。
-2. tionPin.jsx）
-3. API キーを自分のものに置き換えます。
+次にコードを GoogleMap コンポーネントを挿入します。
 
 src/App.tsx
 
@@ -138,7 +129,10 @@ const MyComponent: React = () => {
 export default MyComponent
 ```
 
-# Step4 - 地図のクリックと緯度経度の取得
+# Step4 - 地図のクリックイベントと infoWindow の追加
+
+Maker コンポーネントに onClick イベントを追記します。
+クリックの状態は useState にて管理をします。クリックされたら、infoWindow を表示するようにします。
 
 ```javascript
 const LocationConst = [
@@ -173,13 +167,13 @@ const MyComponent: React.FC = () => {
             }}
             onClick={() => {
               setSelected(marker)
-              // マウスオーバーで<InfoWindow>が描画されます。
+              // <InfoWindow>が描画されます。
             }}
           ></Marker>
         ))}
 
         {selected ? (
-          // MarkerにマウスオーバーされたときにInfoWindowが表示されます。
+          // MarkerにマウスクリックされたときにInfoWindowが表示されます。
           <InfoWindow
             position={{
               lat: selected.location.lat,

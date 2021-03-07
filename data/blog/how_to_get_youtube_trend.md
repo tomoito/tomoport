@@ -10,11 +10,11 @@ summary: 'python から Youtube Data API を使って急上昇ランキングを
 
 # はじめに
 
-この記事では、Python から Youtube Data API (https://developers.google.cn/youtube/v3/getting-started?hl=ja)を使用してデータ収集方法を解説します。
+この記事では、Python から Youtube Data API を使用してデータ収集方法を解説します。
 
 # 経緯
 
-友人から Youtube の急上昇を取得する方法はないかと聞かれて、プログラムを作成しました。
+友人から Youtube の急上昇を取得するプログラムの作成を依頼されたので調査しました。
 
 今日はその方法を説明します。
 
@@ -29,21 +29,22 @@ https://qiita.com/SolKul/items/f078877acd23bb1ea5b5
 前のブログでも解説しましたが、Youtube Data API を使いますので、
 YouTube Data API v3 の API Key を取得してください。
 前ブログを参照ください。
-https://tomoport.vercel.app/blog/YoutubeAPI%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%83%81%E3%83%A3%E3%83%B3%E3%83%8D%E3%83%AB%E3%81%AE%E5%88%86%E6%9E%90%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95
+
+https://tomoport.vercel.app/blog/how_to_use_youtubeapi
 
 ## 必要なパッケージをインストール
 
 Requests ライブラリをインストールします。
 
+```python
 pip install requests
-$ pip install requests
+```
 
 ## 実際に書いてみよう
 
 たいしたコード量ではないので、全て紹介します。
 
 ```python
-# API_KEY="AIzaSyArPgqw1ivEjMrGj6vXCadIT1vVz7PeUZQ"
 from apiclient.discovery import build
 import requests
 

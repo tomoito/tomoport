@@ -1,5 +1,5 @@
 ---
-title: 'Python から Google Spread Sheets へのアクセス方法'
+title: 'PythonからGoogle Spread Sheetsへのアクセス方法'
 date: '2021-03-01'
 tags: ['python', 'youtube']
 draft: false
@@ -103,11 +103,11 @@ https://docs.google.com/spreadsheets/d/xxxxxxxxxxxxxxxxxx/edit#gid=0
 ```
 
 xxxxxxxxxxxxxxxxxx が key になります。
-2-3 で必要になるので、控えておきましょう。
+以降で使いますので、控えておきましょう。
 
 ![YoutubeAPIa](../static/images/googlespread/17_6b1452eda90be693204fcf299ca982e4.png)
 
-## パッケージインストール
+# 実際に書いてみよう
 
 「gspread」と「oauth2client」をインストールします。
 
@@ -138,37 +138,28 @@ SPREADSHEET_KEY = 'xxxxxxxxxxxxxxxxxxxx'
 #共有設定したスプレッドシートのシート1を開く
 worksheet = gc.open_by_key(SPREADSHEET_KEY).worksheet("シート1")
 
+worksheet.update_acell('A1',"hage")
+worksheet.update_cell(1,2,"hoge")
+
 
 ```
 
 # プログラム実行
 
-シートを開いて「Hello World!」と編集されていたら完成です。
+シートを開いて「A1」と「B1」列が編集されていたら完成です。
 https://docs.google.com/spreadsheets/
 
 # コード解説
 
 ```python
-#A!セルの値を受け取る
+#A1セルの値を受け取る
 import_value = worksheet.acell('A1').value
-
 
 #上と同じ
 import_value = worksheet.cell(1,1).value
-```
 
-```python
-#A1セルの値を１に更新する
-ws.update_acell('A1',1)
-
-```
-
-```python
-#A1セルの値に１００を加算した値をB1セルに表示させる
-
-
-```
-
-```python
+#A1セルの値を100に更新する
+ws.update_acell('A1',100)
+ws.update_cell(1,1,100)
 
 ```

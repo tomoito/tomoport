@@ -7,9 +7,39 @@
       <language>ja-jp</language>
       <managingEditor>tomotun1210@gmail.com (tomo)</managingEditor>
       <webMaster>tomotun1210@gmail.com (tomo)</webMaster>
-      <lastBuildDate>Fri, 05 Mar 2021 00:00:00 GMT</lastBuildDate>
+      <lastBuildDate>Sun, 07 Mar 2021 00:00:00 GMT</lastBuildDate>
       <atom:link href="https://tailwind-nextjs-starter-blog.vercel.app/index.xml" rel="self" type="application/rss+xml"/>
       
+  <item>
+    <guid>https://tailwind-nextjs-starter-blog.vercel.app/blog/React_stateManage</guid>
+    <title>Reactでstate管理をする方法(useContext編）</title>
+    <link>https://tailwind-nextjs-starter-blog.vercel.app/blog/React_stateManage</link>
+    <description>TypeScriptの型の作り方を楽しく学んできます。</description>
+    <pubDate>Sun, 07 Mar 2021 00:00:00 GMT</pubDate>
+    <author>tomotun1210@gmail.com (tomo)</author>
+    <category>React</category><category>state</category>
+  </item>
+
+  <item>
+    <guid>https://tailwind-nextjs-starter-blog.vercel.app/blog/what_is_useswr</guid>
+    <title>useSWRを使ってみる</title>
+    <link>https://tailwind-nextjs-starter-blog.vercel.app/blog/what_is_useswr</link>
+    <description>TypeScriptの型の作り方を楽しく学んできます。</description>
+    <pubDate>Sun, 07 Mar 2021 00:00:00 GMT</pubDate>
+    <author>tomotun1210@gmail.com (tomo)</author>
+    <category>React</category><category>useSWR</category>
+  </item>
+
+  <item>
+    <guid>https://tailwind-nextjs-starter-blog.vercel.app/blog/how_to_provide_dyamic_classNames</guid>
+    <title>React で 動的にclassNameを適用する方法をまとめてみた。</title>
+    <link>https://tailwind-nextjs-starter-blog.vercel.app/blog/how_to_provide_dyamic_classNames</link>
+    <description>Reactで動的に className　を適用する方法をまとめてみます。</description>
+    <pubDate>Sat, 06 Mar 2021 00:00:00 GMT</pubDate>
+    <author>tomotun1210@gmail.com (tomo)</author>
+    <category>react</category><category>className</category>
+  </item>
+
   <item>
     <guid>https://tailwind-nextjs-starter-blog.vercel.app/blog/learn_typescript_dqwalk</guid>
     <title>ドラクエウォークで学ぶ、TypeScript入門</title>
@@ -42,7 +72,7 @@
 
   <item>
     <guid>https://tailwind-nextjs-starter-blog.vercel.app/blog/how_to_accses_googlespreadsheet_python</guid>
-    <title>Python から Google Spread Sheets へのアクセス方法</title>
+    <title>PythonからGoogle Spread Sheetsへのアクセス方法</title>
     <link>https://tailwind-nextjs-starter-blog.vercel.app/blog/how_to_accses_googlespreadsheet_python</link>
     <description>Python から Google Spread Sheets へのアクセス方法</description>
     <pubDate>Mon, 01 Mar 2021 00:00:00 GMT</pubDate>

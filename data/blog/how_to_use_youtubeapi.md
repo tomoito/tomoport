@@ -10,17 +10,19 @@ summary: 'Python から Youtube Data API の使い方を説明します。また
 
 # はじめに
 
-この記事では、Python から Youtube Data API (https://developers.google.cn/youtube/v3/getting-started?hl=ja)を使用してデータ収集方法を解説します。
-今回は私が大好きなエガチャンネルを取り上げていますが、チャンネル ID を変更すれば、
-どんなチャンネルの情報でも抽出することが可能です。
+この記事では、Python から Youtube Data API を使用してチャンネルのデータ収集方法を解説します。
+今回は私が大好きなエガチャンネルを取り上げ、再生回数の動向を確認していきます。
 
 # 経緯
 
 第 3 回 好きな YouTuber ランキングでなんと！！江頭 2 時 50 分さんの「エガちゃんねる」が
 1 位に輝きました。
-私はめちゃイケが大好きでしたので、当然エガちゃんも大好きでした。
-このニュースを聞いてなんだか自分のことのように嬉しかったです。
-さて、最近のエガちゃんねるの再生数の動向が知りたくなったので、
+えがちゃんは、過去に出演していた人気テレビ番組が軒並み打ち切りになったことで、ほとんど見かけることがなくなっていました。
+しかし、Youtuber としての活動で再び露出が増えることになると共に、私のようなエガロス達による圧倒的な支持により、あっという間に人気者になりました。
+
+そしてこの人気ランキング１位という結果に嬉しい気持ちになった反面、当時の勢いがなくなってきたのではと感じるようにもなりました。
+そこで、エガちゃんねるの再生数の動向を調べてみます。
+
 Python と Youtube Data API を使いながら、検索したいと思います。
 
 # 環境設定
@@ -29,9 +31,9 @@ VSCode で Python の実行環境を用意します。
 以下の記事をご参照ください。
 https://qiita.com/SolKul/items/f078877acd23bb1ea5b5
 
-# データをどうやって取得するか？
+# youtube のデータをどうやって取得するか？
 
-YouTube チャンネルを手動で数字を拾ってたら、手間がかかり過ぎてしまいます。
+YouTube チャンネルの個別データを手動で拾ってたら、いくら時間があってもたりません。
 そこで、YouTube チャンネルのデータを取得できる YouTube Data API を活用します。
 この API を利用することで、特定のチャンネルに紐づく動画 ID を全て抽出し、再生数や
 コメントなどを取得することができます。控えめに言って超便利です。
@@ -39,6 +41,8 @@ YouTube チャンネルを手動で数字を拾ってたら、手間がかかり
 # YouTube Data API の API Key の取得
 
 API を利用するためには、Google のアカウントが必要になります。
+
+API を使えるまでに少し面倒な手順を踏まないといけません。
 
 ## まずは Cloud Console にアクセスします。
 
@@ -69,30 +73,30 @@ https://console.cloud.google.com
 これらを選択し、『必要な認証情報』ボタンをクリックすれば、API Key が発行されます。
 これで YouTube Data API v3 の API Key 取得が完了です。
 
-# YouTube Data API でいろんな情報を取得してみる
+# YouTube Data API でチャンネル情報を取得してみる
 
 早速 Python を利用して Youtube Data API を使っていきましょう。
 
-まずは、特定チャンネルの Channel ID を取得するサンプルを試しましょう。
+まずは、特定チャンネルの Channel ID をキーにして、チャンネル情報取得するサンプルを書いてみます。
 
 ## 必要なパッケージをインストール
 
 YouTube Data API を使用するためのパッケージをインストールします。
 
+```python
 $ pip install google-api-python-client
+```
 
-私の環境では以下のバージョンを利用しています。
+バージョンによって動作しない可能性もありますので、私が検証したバージョンを記載しておきます。
 Python 3.7.3
 google-api-python-client 1.9.3
 
 ## YouTube チャンネル情報を検索
 
-https://qiita.com/ryoya41/items/dd1fd4c1427ece787eea
-
 まずは、任意の.py ファイルを作成してください。
 
-これはおまじないみたいなもの。インスタンス化する。
-API_KEY は事前準備で取得した API_KEY を入力する。
+以下は、YoutubeAPI を利用するための準備になります。
+API_KEY は事前準備で取得した API_KEY を入力します。
 
 ```python
 from apiclient.discovery import build
@@ -127,6 +131,173 @@ for search_res in channel_res.get("items", []):
 エガちゃんねる EGA-CHANNEL
 ```
 
+ちなみに、取得したデータの json 構造は以下の通りです。
+
+```
+{
+  "kind": "youtube#video",
+  "etag": etag,
+  "id": string,
+  "snippet": {
+    "publishedAt": datetime,
+    "channelId": string,
+    "title": string,
+    "description": string,
+    "thumbnails": {
+      (key): {
+        "url": string,
+        "width": unsigned integer,
+        "height": unsigned integer
+      }
+    },
+    "channelTitle": string,
+    "tags": [
+      string
+    ],
+    "categoryId": string
+  },
+  "contentDetails": {
+    "duration": string,
+    "dimension": string,
+    "definition": string,
+    "caption": string,
+    "licensedContent": boolean,
+    "regionRestriction": {
+      "allowed": [
+        string
+      ],
+      "blocked": [
+        string
+      ]
+    },
+    "contentRating": {
+      "mpaaRating": string,
+      "tvpgRating": string,
+      "bbfcRating": string,
+      "chvrsRating": string,
+      "eirinRating": string,
+      "cbfcRating": string,
+      "fmocRating": string,
+      "icaaRating": string,
+      "acbRating": string,
+      "oflcRating": string,
+      "fskRating": string,
+      "kmrbRating": string,
+      "djctqRating": string,
+      "russiaRating": string,
+      "rtcRating": string,
+      "ytRating": string
+    }
+  },
+  "status": {
+    "uploadStatus": string,
+    "failureReason": string,
+    "rejectionReason": string,
+    "privacyStatus": string,
+    "license": string,
+    "embeddable": boolean,
+    "publicStatsViewable": boolean
+  },
+  "statistics": {
+    "viewCount": unsigned long,
+    "likeCount": unsigned long,
+    "dislikeCount": unsigned long,
+    "favoriteCount": unsigned long,
+    "commentCount": unsigned long
+  },
+  "player": {
+    "embedHtml": string
+  },
+  "topicDetails": {
+    "topicIds": [
+      string
+    ],
+    "relevantTopicIds": [
+      string
+    ]
+  },
+  "recordingDetails": {
+    "locationDescription": string,
+    "location": {
+      "latitude": double,
+      "longitude": double,
+      "altitude": double
+    },
+    "recordingDate": datetime
+  },
+  "fileDetails": {
+    "fileName": string,
+    "fileSize": unsigned long,
+    "fileType": string,
+    "container": string,
+    "videoStreams": [
+      {
+        "widthPixels": unsigned integer,
+        "heightPixels": unsigned integer,
+        "frameRateFps": double,
+        "aspectRatio": double,
+        "codec": string,
+        "bitrateBps": unsigned long,
+        "rotation": string,
+        "vendor": string
+      }
+    ],
+    "audioStreams": [
+      {
+        "channelCount": unsigned integer,
+        "codec": string,
+        "bitrateBps": unsigned long,
+        "vendor": string
+      }
+    ],
+    "durationMs": unsigned long,
+    "bitrateBps": unsigned long,
+    "recordingLocation": {
+      "latitude": double,
+      "longitude": double,
+      "altitude": double
+    },
+    "creationTime": string
+  },
+  "processingDetails": {
+    "processingStatus": string,
+    "processingProgress": {
+      "partsTotal": unsigned long,
+      "partsProcessed": unsigned long,
+      "timeLeftMs": unsigned long
+    },
+    "processingFailureReason": string,
+    "fileDetailsAvailability": string,
+    "processingIssuesAvailability": string,
+    "tagSuggestionsAvailability": string,
+    "editorSuggestionsAvailability": string,
+    "thumbnailsAvailability": string
+  },
+  "suggestions": {
+    "processingErrors": [
+      string
+    ],
+    "processingWarnings": [
+      string
+    ],
+    "processingHints": [
+      string
+    ],
+    "tagSuggestions": [
+      {
+        "tag": string,
+        "categoryRestricts": [
+          string
+        ]
+      }
+    ],
+    "editorSuggestions": [
+      string
+    ]
+  }
+}
+```
+
 # データ取得の流れ
 
 本プログラムでは、以下の流れで Youtube チャンネル内の全ての投稿動画のデータを取得します。
@@ -135,7 +306,7 @@ for search_res in channel_res.get("items", []):
 2. 1.で取得したプレイリスト ID をキーに、動画タイトルと投稿日時、動画 ID を取得
 3. 2.で取得した動画 ID から、動画の再生回数を取得
 
-# プレイリスト ID の取得
+## プレイリスト ID の取得
 
 ```python
 search_res = youtube.channels().list(
@@ -148,9 +319,11 @@ print(search_res['items'][0])
 print 結果は以下の通りです。
 ![YoutubeAPIa](https://gyazo.com/02e437471c01dc3e208db379d9c8063d.png"サンプルa")
 
+プレイリスト ID は ['contentDetails']['relatedplaylists']['uploads'] に格納されています。
+
 # 動画 ID の取得
 
-動画タイトル、投稿日時、動画 ID の取得になります。
+プレイリスト ID をキーとして、動画タイトル、投稿日時、動画 ID の取得になります。
 
 ```python
 def GetPlaylistInfo(playlist_id, API_KEY):
@@ -185,16 +358,18 @@ def GetPlaylistInfo(playlist_id, API_KEY):
     return res
 ```
 
-ここから、動画タイトル、投稿日時、動画 ID を以下のように取得します。
+一度に取得できる動画数は 50 までとなっています。
+それ以上の動画数を取得するためには、nextPageToken に次のページが取得されていますので、
+再起的に pageToken を入れ替えることで 50 個以上のデータが取得できます。
+
 投稿時間は、ここで str から datetime 型に変換しておきます。
 
 # 動画の詳細情報の取得
 
 動画 ID から、動画の詳細情報(再生数、評価数、コメント数、再生時間)を取得します。
-引数 id\_には動画 ID を与えます。
+引数 id には動画 ID を与えます。
 
 ```python
-
 
 def GetVideoInfo(video_id, API_KEY):
 
@@ -205,7 +380,6 @@ def GetVideoInfo(video_id, API_KEY):
     id=video_id,
     ).execute()
 
-    #動画の情報をオブジェクト形式で格納していきます。
     video_info = search_res['items'][0]
     details = {'viewCount':int(video_info['statistics']['viewCount']),
                'likeCount':int(video_info['statistics']['likeCount']),

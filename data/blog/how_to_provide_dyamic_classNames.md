@@ -8,38 +8,39 @@ summary: 'Reactで動的に className　を適用する方法をまとめてみ�
 
 # React で動的に className を適用する方法をまとめてみます。
 
-# はじめに
+# 通常の className
 
-React コンポーネントのクラスが違うだけのコンポーネントを複数作っていませんか？
-動的にクラス名を指定して、柔軟なコンポーネントを作成しましょう。
+通常のクラスを付与する方法は以下の通りです。
 
-# コンポーネントだけで簡潔する
-
-```javascript
-
-const [classNames,setclassNames] = React.useSutate('')
-const [showRed, setShowRed] = useState(false)
-
-useEffect(()=> {
-    setClassNames(`${showRed ? "red":"" } ${showBlue} ? "blue" :""}`)
-},[showRed,showBlue])
-
-<button onClick ={()–≥ setShowRed(showRed => !showRed)}>Pika</button>
+```
+<div className="hoge">
+  HOGE
+</div>
 ```
 
-# 条件に合ったもの追記していく
+クラスを複数付ける時も同じ。
+
+```
+<div className='hoge hage'>
+  フランス
+</div>
+```
+
+# 動的な className
+
+## 条件に合ったもの追記していく
 
 ```javascript
 <div className={flg & 'colorRed'}>hoge!</div>
 ```
 
-# 条件に合った場合、合わなかった場合を追記する
+## 条件に合った場合、合わなかった場合を追記する
 
 ```javascript
 <div className={flg ? 'colorRed' : 'colorBlue'}>hoge!</div>
 ```
 
-# クラス名の一部を変更する
+## クラス名の一部を変更する
 
 ```javascript
 type flg='blue' | 'red'
@@ -47,7 +48,3 @@ type flg='blue' | 'red'
 hoge!
 </div>
 ```
-
-#
-
-# はじめに
