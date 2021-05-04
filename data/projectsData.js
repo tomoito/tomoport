@@ -6,10 +6,16 @@ const projectsData = [
     href: 'https://draquewalk.vercel.app/',
   },
   {
-    title: 'None',
-    description: `None`,
+    title: 'Gmailクローン',
+    description: `Next.js,TypeScript,Redux Tool Kit,FireBase`,
     imgSrc: '/static/images/time-machine.jpg',
-    href: '/blog/the-time-machine',
+    href: 'https://gmail-clone-six.vercel.app/',
+  },
+  {
+    title: 'ドラクエウォーク検索システム',
+    description: `Next.js,TypeScript,Redux Tool Kit`,
+    imgSrc: '/static/images/time-machine.jpg',
+    href: 'https://drafilter.vercel.app/',
   },
 ]
 

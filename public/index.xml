@@ -7,9 +7,39 @@
       <language>ja-jp</language>
       <managingEditor>tomotun1210@gmail.com (tomo)</managingEditor>
       <webMaster>tomotun1210@gmail.com (tomo)</webMaster>
-      <lastBuildDate>Sun, 07 Mar 2021 00:00:00 GMT</lastBuildDate>
+      <lastBuildDate>Thu, 11 Mar 2021 00:00:00 GMT</lastBuildDate>
       <atom:link href="https://tailwind-nextjs-starter-blog.vercel.app/index.xml" rel="self" type="application/rss+xml"/>
       
+  <item>
+    <guid>https://tailwind-nextjs-starter-blog.vercel.app/blog/Twitter-api-v2-detail</guid>
+    <title>Twitter API v2 の仕様を理解する</title>
+    <link>https://tailwind-nextjs-starter-blog.vercel.app/blog/Twitter-api-v2-detail</link>
+    <description>Twitter API v2 を深掘りします</description>
+    <pubDate>Thu, 11 Mar 2021 00:00:00 GMT</pubDate>
+    <author>tomotun1210@gmail.com (tomo)</author>
+    <category>python</category><category>twitter</category>
+  </item>
+
+  <item>
+    <guid>https://tailwind-nextjs-starter-blog.vercel.app/blog/python_twitterapii</guid>
+    <title>Python から Twitter API v2 を操作する</title>
+    <link>https://tailwind-nextjs-starter-blog.vercel.app/blog/python_twitterapii</link>
+    <description>Python から Twitter API v2 を操作する</description>
+    <pubDate>Wed, 10 Mar 2021 00:00:00 GMT</pubDate>
+    <author>tomotun1210@gmail.com (tomo)</author>
+    <category>python</category><category>twitter</category>
+  </item>
+
+  <item>
+    <guid>https://tailwind-nextjs-starter-blog.vercel.app/blog/useQuery</guid>
+    <title>react-queryを使ってみる</title>
+    <link>https://tailwind-nextjs-starter-blog.vercel.app/blog/useQuery</link>
+    <description>react-queryを使ってみます。</description>
+    <pubDate>Mon, 08 Mar 2021 00:00:00 GMT</pubDate>
+    <author>tomotun1210@gmail.com (tomo)</author>
+    <category>React</category><category>react-query</category>
+  </item>
+
   <item>
     <guid>https://tailwind-nextjs-starter-blog.vercel.app/blog/React_stateManage</guid>
     <title>Reactでstate管理をする方法(useContext編）</title>
@@ -18,16 +48,6 @@
     <pubDate>Sun, 07 Mar 2021 00:00:00 GMT</pubDate>
     <author>tomotun1210@gmail.com (tomo)</author>
     <category>React</category><category>state</category>
-  </item>
-
-  <item>
-    <guid>https://tailwind-nextjs-starter-blog.vercel.app/blog/what_is_useswr</guid>
-    <title>useSWRを使ってみる</title>
-    <link>https://tailwind-nextjs-starter-blog.vercel.app/blog/what_is_useswr</link>
-    <description>TypeScriptの型の作り方を楽しく学んできます。</description>
-    <pubDate>Sun, 07 Mar 2021 00:00:00 GMT</pubDate>
-    <author>tomotun1210@gmail.com (tomo)</author>
-    <category>React</category><category>useSWR</category>
   </item>
 
   <item>
@@ -68,6 +88,16 @@
     <pubDate>Wed, 03 Mar 2021 00:00:00 GMT</pubDate>
     <author>tomotun1210@gmail.com (tomo)</author>
     <category>react</category><category>googlemap</category>
+  </item>
+
+  <item>
+    <guid>https://tailwind-nextjs-starter-blog.vercel.app/blog/django_rest_framework_begin</guid>
+    <title>Django Rest FrameWork を学ぶ</title>
+    <link>https://tailwind-nextjs-starter-blog.vercel.app/blog/django_rest_framework_begin</link>
+    <description>WebAPI を作成するために、Django Rest FrameWork の使い方を説明します。</description>
+    <pubDate>Sat, 13 Mar 2021 15:00:00 GMT</pubDate>
+    <author>tomotun1210@gmail.com (tomo)</author>
+    <category>python</category><category>django</category>
   </item>
 
   <item>
