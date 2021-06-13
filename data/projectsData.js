@@ -13,7 +13,7 @@ const projectsData = [
   },
   {
     title: 'Googleクローン',
-    description: `【使用技術】Next.js,JavaScript,Tailwind CSS,Redux Toolkit 【src】https://google-clone-yt-seven.vercel.app/ `,
+    description: `【使用技術】Next.js,JavaScript,Tailwind CSS,Redux Toolkit  `,
     imgSrc: '/static/images/time-machine.jpg',
     href: 'https://google-clone-yt-seven.vercel.app/',
   },
