@@ -1,9 +1,9 @@
 const projectsData = [
   {
-    title: 'ドラクエウォークこころ検索システム',
-    description: `ドラクエウォークのココロを色々なフィルターを使って検索し、自由にカスタマイズできます。`,
+    title: 'amazonクローン',
+    description: `【使用技術】Next.js,TypeScript,Tailwind CSS,Redux Toolkit ,FireBase`,
     imgSrc: '/static/images/google.png',
-    href: 'https://draquewalk.vercel.app/',
+    href: 'https://amazon-clone2-gold.vercel.app/',
   },
   {
     title: 'Gmailクローン',
