@@ -15,7 +15,7 @@ const projectsData = [
     title: 'Googleクローン',
     description: `【使用技術】Next.js,JavaScript,Tailwind CSS,Redux Toolkit 【src】https://google-clone-yt-seven.vercel.app/ `,
     imgSrc: '/static/images/time-machine.jpg',
-    href: 'https://gmail-clone-six.vercel.app/',
+    href: 'https://google-clone-yt-seven.vercel.app/',
   },
   {
     title: 'ドラクエウォーク検索システム',
